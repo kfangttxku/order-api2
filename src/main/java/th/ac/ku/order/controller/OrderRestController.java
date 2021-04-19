@@ -42,8 +42,7 @@ public class OrderRestController {
     public Orders update(@PathVariable int orderId, @RequestBody Orders order) {
         Orders record = orderRepository.findById(orderId).get();
         record.setOrderStatus(order.getOrderStatus());
-        record.setProductId(order.getProductId());
-        record.setProductUnit(order.getProductUnit());
+        record.setProductAmount(order.getProductAmount());
         orderRepository.save(record);
         return record;
     }

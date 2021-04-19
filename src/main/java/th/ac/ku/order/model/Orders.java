@@ -12,7 +12,7 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
-    private int salesmanId, customerId, productId, productUnit;
+    private int customerId, productId, productAmount;
     private String orderStatus;
     private Date orderDate;
 
@@ -22,14 +22,6 @@ public class Orders {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
-    }
-
-    public int getSalesmanId() {
-        return salesmanId;
-    }
-
-    public void setSalesmanId(int salesmanId) {
-        this.salesmanId = salesmanId;
     }
 
     public int getCustomerId() {
@@ -48,12 +40,12 @@ public class Orders {
         this.productId = productId;
     }
 
-    public int getProductUnit() {
-        return productUnit;
+    public int getProductAmount() {
+        return productAmount;
     }
 
-    public void setProductUnit(int productUnit) {
-        this.productUnit = productUnit;
+    public void setProductAmount(int productAmount) {
+        this.productAmount = productAmount;
     }
 
     public String getOrderStatus() {
@@ -76,10 +68,9 @@ public class Orders {
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", salesmanId=" + salesmanId +
                 ", customerId=" + customerId +
                 ", productId=" + productId +
-                ", productUnit=" + productUnit +
+                ", productUnit=" + productAmount +
                 ", orderStatus='" + orderStatus + '\'' +
                 ", orderDate=" + orderDate +
                 '}';
