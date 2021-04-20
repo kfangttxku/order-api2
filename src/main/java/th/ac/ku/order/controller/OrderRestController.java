@@ -26,7 +26,7 @@ public class OrderRestController {
         return orderRepository.findById(orderId).get();
     }
 
-    @GetMapping("/order/{orderId}")
+    @GetMapping("/orders/{orderId}")
     public List<Orders> getAllOrderId(@PathVariable int orderId) {
         return orderRepository.findByOrderId(orderId);
     }
@@ -43,6 +43,8 @@ public class OrderRestController {
         Orders record = orderRepository.findById(orderId).get();
         record.setOrderStatus(order.getOrderStatus());
         record.setProductAmount(order.getProductAmount());
+        record.setCustomerId(order.getCustomerId());
+        record.setProductId(order.getProductId());
         orderRepository.save(record);
         return record;
     }
